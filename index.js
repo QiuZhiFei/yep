@@ -3,11 +3,11 @@ const axios = require('axios');
 const url = require('url');
 
 const app = express();
-const PORT = 80;
+const PORT = 1234;
 
-app.use(express.json());
+// app.use(express.json());
 
-app.get('/get', async (req, res) => {
+app.get('/', async (req, res) => {
     try {
         const originalUrl = req.query.url;
 
@@ -35,9 +35,4 @@ app.listen(PORT, () => {
 });
 
 
-// async function main() {
-//     const response = await axios.get('http://www.baidu.com');
-//     console.log(response.data);
-// }
-
-// main();
+module.exports = app;
