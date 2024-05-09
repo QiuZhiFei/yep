@@ -8,6 +8,10 @@ const PORT = 1234;
 // app.use(express.json());
 
 app.get('/', async (req, res) => {
+    res.send('Hello World!');
+});
+
+app.get('/meow', async (req, res) => {
     try {
         const originalUrl = req.query.url;
 
@@ -29,6 +33,7 @@ app.get('/', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
