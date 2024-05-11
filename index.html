@@ -31,14 +31,19 @@
             
             document.getElementById('result').href = resultUrl;
             document.getElementById('result').innerText = resultUrl;
+            
+            if (input !== '') {
+                document.getElementById('input-text-result').style.display = 'block';    
+            } else {
+                document.getElementById('input-text-result').style.display = 'none';
+            }
         }
     </script>
 </head>
 <body>
-    <h1>URL Parameter Generator</h1>
-    <p>Enter text to generate the URL parameter:</p>
-    <input type="text" id="input-text" placeholder="Enter text here" oninput="generateURL()" />
-    <p>Result:</p>
+    <h1>Proxy Converter</h1>
+    <input type="text" id="input-text" placeholder="粘贴 Clash 订阅链接" oninput="generateURL()" />
+    <p id="input-text-result" style="display: none;">复制转换后的 Clash 订阅链接</p>
     <a id="result"></a>
 </body>
 </html>
