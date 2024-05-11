@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Parameter Generator</title>
+    <style>
+        body {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        #result {
+            margin-top: 20px;
+            word-wrap: break-word;
+        }
+    </style>
+    <script>
+        function generateURL() {
+            var input = document.getElementById('input-text').value;
+            var encodedInput = encodeURIComponent(input);
+            var currentDomain = window.location.href;
+            var resultUrl = currentDomain + "meow?url=" + encodedInput;
+            
+            document.getElementById('result').href = resultUrl;
+            document.getElementById('result').innerText = resultUrl;
+        }
+    </script>
+</head>
+<body>
+    <h1>URL Parameter Generator</h1>
+    <p>Enter text to generate the URL parameter:</p>
+    <input type="text" id="input-text" placeholder="Enter text here" oninput="generateURL()" />
+    <p>Result:</p>
+    <a id="result"></a>
+</body>
+</html>

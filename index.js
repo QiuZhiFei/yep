@@ -8,7 +8,8 @@ const PORT = 1234;
 // app.use(express.json());
 
 app.get('/', async (req, res) => {
-    res.send('Hello World!');
+    // 返回本地的 index.html
+    res.sendFile(__dirname + '/index.html');
 });
 
 app.get('/meow', async (req, res) => {
