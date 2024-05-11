@@ -29,13 +29,17 @@
             var currentDomain = window.location.href;
             var resultUrl = currentDomain + "meow?url=" + encodedInput;
             
-            document.getElementById('result').href = resultUrl;
-            document.getElementById('result').innerText = resultUrl;
-            
             if (input !== '') {
                 document.getElementById('input-text-result').style.display = 'block';    
+
+                document.getElementById('result').href = resultUrl;
+                document.getElementById('result').innerText = resultUrl;
+
             } else {
                 document.getElementById('input-text-result').style.display = 'none';
+
+                document.getElementById('result').href = '';
+                document.getElementById('result').innerText = '';
             }
         }
     </script>
