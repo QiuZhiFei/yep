@@ -26,7 +26,13 @@ app.get('/meow', async (req, res) => {
             return res.status(400).json({ error: 'Invalid URL parameter in query string' });
         }
 
-        const response = await axios.get(targetUrl);
+        // 添加 ua ClashX/1.65.1 (com.west2online.ClashX; build:1.65.1; macOS 11.5.2) Alamofire/5.4.3
+
+        const response = await axios.get(targetUrl, {
+            headers: {
+                'User-Agent': 'ClashX/1.65.1 (com.west2online.ClashX; build:1.65.1; macOS 11.5.2) Alamofire/5.4.3'
+            }
+        });
 
         res.send(response.data);
         
